@@ -30,8 +30,8 @@ const App = () => {
         <AddedFeatures />
       </div>
       <div className="box">
-        {/* <AdditionalFeatures additionalFeatures={state.additionalFeatures} />
-        <Total car={state.car} additionalPrice={state.additionalPrice} /> */}
+        <AdditionalFeatures />
+        {/* <Total car={state.car} additionalPrice={state.additionalPrice} /> */}
       </div>
     </div>
   );
