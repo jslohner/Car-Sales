@@ -6,14 +6,15 @@ const AddedFeature = props => {
 		<li>
 			{/* Add an onClick to run a function to remove a feature */}
 			<button className="button">X</button>
-			{props.feature.name}
+			{props.features[props.idx].name}
 		</li>
 	);
 };
 
 const mapStateToProps = state => {
+	console.log();
 	return {
-		name: state.features.car.name
+		features: state.car.features
 	};
 };
 

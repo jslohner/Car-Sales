@@ -17,7 +17,8 @@ const mapStateToProps = state => {
 	return {
 		image: state.car.image,
 		name: state.car.name,
-		price: state.car.price
+		price: state.car.price,
+		features: state.car.features
 	};
 };
 
