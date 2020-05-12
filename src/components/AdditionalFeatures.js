@@ -4,20 +4,20 @@ import { connect } from 'react-redux';
 import AdditionalFeature from './AdditionalFeature';
 
 const AdditionalFeatures = props => {
-  return (
-    <div className="content">
-      <h4>Additional Features</h4>
-      {props.additionalFeatures.length ? (
-        <ol type="1">
-          {props.additionalFeatures.map((item, idx) => (
-            <AdditionalFeature key={item.id} idx={idx} />
-          ))}
-        </ol>
-      ) : (
-        <p>Nice looking car!</p>
-      )}
-    </div>
-  );
+	return (
+		<div className="content">
+			<h4>Additional Features</h4>
+			{props.additionalFeatures.length ? (
+				<ol type="1">
+					{props.additionalFeatures.map((item, idx) => (
+						<AdditionalFeature key={item.id} idx={idx} />
+					))}
+				</ol>
+			) : (
+				<p>Nice looking car!</p>
+			)}
+		</div>
+	);
 };
 
 const mapStateToProps = state => {
