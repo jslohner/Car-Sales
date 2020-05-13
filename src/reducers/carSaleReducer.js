@@ -24,9 +24,11 @@ export const carSaleReducer = (state = initialState, action) => {
 				...state,
 				car: {
 					...state.car,
-					features: [...state.car.features, action.payload]
+					// features: [...state.car.features, action.payload]
+					features: (!state.car.features.includes(action.payload) ? [...state.car.features, action.payload] : state.car.features)
 				},
-				additionalPrice: state.additionalPrice + action.payload.price
+				// additionalPrice: state.additionalPrice + action.payload.price
+				additionalPrice: (!state.car.features.includes(action.payload) ? state.additionalPrice + action.payload.price : state.additionalPrice)
 			};
 		case REMOVE_FEATURE:
 			return {
