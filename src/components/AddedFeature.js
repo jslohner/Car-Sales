@@ -1,13 +1,23 @@
 import React from 'react';
+import { connect } from 'react-redux';
+
+import { removeFeature } from '../actions/carSaleActions.js';
 
 const AddedFeature = props => {
-  return (
-    <li>
-      {/* Add an onClick to run a function to remove a feature */}
-      <button className="button">X</button>
-      {props.feature.name}
-    </li>
-  );
+	return (
+		<li>
+			{/* Add an onClick to run a function to remove a feature */}
+			<button onClick={() => props.removeFeature(props.features[props.idx])} className="button">X</button>
+			{props.features[props.idx].name}
+		</li>
+	);
 };
 
-export default AddedFeature;
+const mapStateToProps = state => {
+	console.log();
+	return {
+		features: state.car.features
+	};
+};
+
+export default connect(mapStateToProps, { removeFeature })(AddedFeature);
